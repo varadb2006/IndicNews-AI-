@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node / React
+node_modules/
+frontend/build/
+frontend/dist/
+.env
+
+# ML artifacts (keep only final chosen models under version control if desired)
+models/saved_models/*.pkl
+models/saved_models/*.model
+models/saved_models/*.bin
+
+# Dataset (large files — not committed; get from the team or Kaggle)
+dataset/*.csv
+
+# OS / Editor
+.DS_Store
+.vscode/
+*.log
