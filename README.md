@@ -6,7 +6,7 @@ category classification, named entity recognition, keyword extraction,
 topic modeling, similar-news recommendation, extractive summarization,
 and text analytics.
 
-> **Status:** Module 2 of 15 complete — Dataset loading & EDA.
+> **Status:** Module 3 of 15 complete — Text Preprocessing.
 > Subsequent modules (preprocessing, feature engineering, models,
 > backend, frontend, integration, deployment, docs) will be added
 > incrementally and reviewed one at a time.
@@ -79,7 +79,7 @@ IndicNewsAI/
 
 1. ✅ Project folder structure
 2. ✅ Dataset loading & EDA
-3. ⬜ Text preprocessing
+3. ✅ Text preprocessing
 4. ⬜ Feature engineering
 5. ⬜ Word2Vec & FastText
 6. ⬜ Classification
