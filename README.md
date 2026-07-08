@@ -81,7 +81,7 @@ IndicNewsAI/
 2. ✅ Dataset loading & EDA
 3. ✅ Text preprocessing
 4. ✅ Feature engineering
-5. ⬜ Word2Vec & FastText
+5. ✅ Word2Vec & FastText
 6. ⬜ Classification
 7. ⬜ NER
 8. ⬜ Topic modeling
@@ -92,5 +92,3 @@ IndicNewsAI/
 13. ⬜ Testing
 14. ⬜ Deployment
 15. ⬜ Documentation
-
-Each module will be built, explained, and confirmed before moving to the next.
