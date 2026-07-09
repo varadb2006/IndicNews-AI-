@@ -82,7 +82,7 @@ IndicNewsAI/
 3. ✅ Text preprocessing
 4. ✅ Feature engineering
 5. ✅ Word2Vec & FastText
-6. ⬜ Classification
+6. ✅ Classification
 7. ⬜ NER
 8. ⬜ Topic modeling
 9. ⬜ Similarity search
