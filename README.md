@@ -6,10 +6,7 @@ category classification, named entity recognition, keyword extraction,
 topic modeling, similar-news recommendation, extractive summarization,
 and text analytics.
 
-> **Status:** Module 4 of 15 complete — Feature Engineering.
-> Subsequent modules (preprocessing, feature engineering, models,
-> backend, frontend, integration, deployment, docs) will be added
-> incrementally and reviewed one at a time.
+
 
 ---
 
@@ -51,9 +48,6 @@ IndicNewsAI/
 │       # 09_SaveModels.ipynb
 │
 ├── dataset/                        # raw + processed Hindi news dataset (Inshorts Hindi)
-│
-├── report/                         # project report (Word/PDF)
-├── presentation/                   # slide deck (10–15 slides)
 │
 ├── requirements.txt                 # backend + ML Python dependencies
 ├── README.md                        # this file
