@@ -79,7 +79,7 @@ IndicNewsAI/
 6. ✅ Classification
 7. ✅ NER
 8. ✅ Topic modeling
-9. ⬜ Similarity search
+9. ✅ Similarity search
 10. ⬜ Backend APIs
 11. ⬜ React frontend
 12. ⬜ Integration
