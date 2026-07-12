@@ -78,11 +78,10 @@ IndicNewsAI/
 5. ✅ Word2Vec & FastText
 6. ✅ Classification
 7. ✅ NER
-8. ⬜ Topic modeling
+8. ✅ Topic modeling
 9. ⬜ Similarity search
 10. ⬜ Backend APIs
 11. ⬜ React frontend
 12. ⬜ Integration
 13. ⬜ Testing
-14. ⬜ Deployment
-15. ⬜ Documentation
+14. ⬜ Documentation
