@@ -29,3 +29,5 @@ dataset/*.csv
 .vscode/
 *.log
 models/saved_models/fasttext.model.wv.vectors_ngrams.npy
+
+report
