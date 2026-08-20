@@ -1,13 +1,4 @@
-"""
-feature_engineering.py
-------------------------
-Feature engineering for the cleaned/tokenized corpus produced by
-`preprocessing.py`. Builds the TF-IDF representation used by Module 6
-(Classification), Module 7 (Keyword Extraction), and Module 9
-(Similarity Search) — one fitted vectorizer, reused everywhere, so
-"similar keywords" always means the same feature space.
 
-"""
 
 import re
 

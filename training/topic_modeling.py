@@ -1,22 +1,4 @@
-"""
-topic_modeling.py
--------------------
-Topic modeling : implements BOTH LDA and NMF,  so the choice is made from
-a real side-by-side comparison rather than picked upfront.
 
-Different input feature space for each, deliberately:
-  - LDA assumes a generative multinomial process over raw word counts :
-    it's designed for Bag-of-Words, not TF-IDF weighting. 
-  - NMF factorizes whatever matrix it's given and works natively on
-    TF-IDF, which also means NMF
-    topics can surface meaningful phrases (e.g. "विश्व कप") as single
-    topic-word entries, not just unigrams.
-
-`n_topics=7` by default, matching the 7 known `core_categories` classes
- not because topic modeling is expected to rediscover exactly those
-categories (it's unsupervised, no guarantee of alignment), but it makes
-for a natural, interpretable comparison point.
-"""
 
 import numpy as np
 from sklearn.decomposition import NMF, LatentDirichletAllocation
@@ -32,7 +14,6 @@ def build_lda_model(X_counts, n_topics=7, **kwargs):
 
 
 def build_nmf_model(X_tfidf, n_topics=7, **kwargs):
-    """Train NMF on a TF-IDF matrix."""
     params = dict(n_components=n_topics, random_state=42, max_iter=300, init="nndsvda")
     params.update(kwargs)
     model = NMF(**params)

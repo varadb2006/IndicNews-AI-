@@ -1,31 +1,3 @@
-"""
-classification.py
--------------------
-Multi-label news category classification (Module 6). Builds on:
-  - TF-IDF vectorizer/matrix (models/saved_models/tfidf_*)
-  - `core_categories` multi-label column (data_utils.py)
-
-Why multi-label, and why Logistic Regression specifically:
-
-  established that a row can genuinely belong to more than one
-  category at once (e.g. `sports` AND `national`), so this is a
-  multi-label problem — `MultiLabelBinarizer` + `OneVsRestClassifier`,
-  not a plain single-label classifier.
-
-  Logistic Regression is used here because the target `/analyze`
-  API response needs a genuine confidence score per predicted category
-  Logistic Regression's `predict_proba` gives calibrated-ish probabilities
-  natively; LinearSVC's `decision_function` is not a probability and
-  would need extra calibration (CalibratedClassifierCV) to produce one
-  
-IMPORTANT — feature/label alignment: the saved TF-IDF matrix
-(`tfidf_matrix.npz`) does NOT have labels saved alongside it. Row
-alignment depends on re-running the *exact* same pipeline
-(`load_dataset` -> `drop_duplicates` -> `reset_index` -> same order) that
-built the matrix. `load_features_and_labels()` does this and
-asserts the row counts match, specifically to catch silent misalignment
-early rather than training a classifier against shuffled labels.
-"""
 
 import joblib
 import numpy as np

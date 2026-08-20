@@ -1,19 +1,3 @@
-"""
-ner.py
--------
-Named Entity Recognition via Stanza's Hindi pipeline 
-Extracts Person / Location / Organization entities.
-
-IMPORTANT — run NER on RAW text, not preprocessed text:
-    `preprocessing.py`'s pipeline (stemming, stopword removal, special
-    character stripping) is built for TF-IDF/classification, and it
-    actively destroys what NER needs: word casing/inflection, sentence
-    punctuation, and word order. Stanza's Hindi NER model expects
-    natural, unmodified text. Always call `extract_entities()` on the
-    original `Headline`/`Content` columns, never on `*_clean` /
-    `*_tokens`.
-
-"""
 
 import re
 

@@ -1,29 +1,3 @@
-"""
-embeddings.py
---------------
-Word2Vec and FastText training for the IndicNews AI project (Module 5).
-The brief says "implement Word2Vec or FastText, whichever suits best" —
-this module trains BOTH on the same corpus with matching hyperparameters
-so 04_WordEmbeddings.ipynb can make that comparison with real numbers
-instead of asserting it. Short version, confirmed in the notebook:
-FastText wins for this dataset because Hindi is morphologically rich
-(heavy inflection, frequent OOV/rare word forms even after stemming),
-and FastText's subword n-grams handle that where Word2Vec just fails
-with a KeyError.
-
-Input corpus choice: trained on `Content_tokens` (IndicNLP-tokenized,
-Hindi-stopword-removed, light-stemmed — the output of
-`preprocessing.py`), NOT the further `EXTENDED_STOPWORDS_HI`-filtered
-tokens from `feature_engineering.py`. Reasoning: Word2Vec/FastText learn
-from local co-occurrence windows, so aggressively stripping additional
-"reporting verb" tokens would shrink and distort context windows for
-little benefit — that extra stopword layer was motivated by TF-IDF
-feature *sparsity*, which doesn't apply here. The base
-`preprocessing.py` stopword removal is kept since those are true
-function words that add little distributional signal either way.
-
-
-"""
 
 import os
 
