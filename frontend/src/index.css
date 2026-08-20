@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for IndicNews AI.
+
+  Concept: a newsroom wire-desk. Two signature elements pulled directly
+  from this project's real engineering history, not invented decoration:
+    1. The danda (।) -- the Devanagari sentence-terminator that caused
+       two real bugs during preprocessing (Modules 3-4) -- is used here
+       as the structural divider throughout the UI, in place of a
+       generic bullet or pipe.
+    2. Category predictions render as rotated ink-stamp marks (see
+       CategoryStamp component), evoking an official press-bulletin
+       stamp rather than a generic rounded pill badge.
+*/
+
+@theme {
+  /* Named palette -- deliberately not the cream+terracotta or
+     near-black+neon defaults. */
+  --color-ink: #1c1b22;         /* primary text / dark surfaces */
+  --color-paper: #ede7d9;       /* warm, slightly grey aged-paper background */
+  --color-paper-bright: #f6f2e8;/* lighter paper for cards/panels */
+  --color-stamp: #b23a2e;       /* vermillion ink-stamp -- primary accent */
+  --color-marigold: #d98e2b;    /* secondary accent -- confidence bars, highlights */
+  --color-wire: #6b6558;        /* borders, dividers, secondary text */
+  --color-wire-light: #d8d0bd;  /* hairline borders on paper */
+
+  /* Type: a deliberate bilingual pairing. Display faces carry
+     personality; body/utility faces stay quiet and readable. */
+  --font-display-en: "Fraunces", ui-serif, serif;
+  --font-display-hi: "Noto Serif Devanagari", ui-serif, serif;
+  --font-body-en: "IBM Plex Sans", ui-sans-serif, sans-serif;
+  --font-body-hi: "IBM Plex Sans Devanagari", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body-en);
+}
+
+/* Hindi text runs (headlines, article body, results) get the Devanagari
+   pairing so both scripts render with matching intentional weight. */
+.hi-text {
+  font-family: var(--font-body-hi);
+}
+.hi-display {
+  font-family: var(--font-display-hi);
+}
+
+/* The danda divider -- this project's signature structural device.
+   Used between nav items, as section separators, and as list markers,
+   instead of a generic bullet/pipe. */
+.danda-divider {
+  color: var(--color-wire);
+  font-family: var(--font-display-hi);
+  user-select: none;
+}
+
+/* Visible keyboard focus, respected everywhere (quality floor, not
+   decoration) -- see frontend-design skill's restraint section. */
+:focus-visible {
+  outline: 2px solid var(--color-stamp);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
