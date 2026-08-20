@@ -1,0 +1,20 @@
+# IndicNews AI -- backend + ML dependencies
+# Install with: pip install -r requirements.txt
+# (Colab notebooks pip-install their own extra packages inline; this file
+# is for running the Flask backend and re-running training notebooks locally.)
+
+# --- Backend ---
+Flask>=3.1
+flask-cors>=6.0
+
+# --- Data handling ---
+numpy>=2.4
+pandas>=3.0
+scipy>=1.17
+
+# --- ML / NLP ---
+scikit-learn>=1.8
+gensim>=4.4
+stanza>=1.13
+indic-nlp-library>=0.92
+joblib>=1.5
