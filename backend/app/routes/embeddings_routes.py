@@ -1,16 +1,3 @@
-"""
-routes/embeddings_routes.py
-------------------------------
-GET /similar-words?word=... — bonus endpoint. The brief's "Semantic
-Representation" feature says to train Word2Vec/FastText and "show
-similar words." Module 5 already demonstrated this in the training
-notebook, but exposing it through the live app too means it's not just
-a one-off Colab result. Uses FastText specifically (not Word2Vec) —
-Module 5's real comparison found FastText handles typos/rare word forms
-via subwords where Word2Vec fails outright, which matters for
-arbitrary user-typed queries here.
-"""
-
 from flask import Blueprint, jsonify, request
 
 from app.config import Config
@@ -29,7 +16,7 @@ def similar_words():
     if bundle.fasttext_model is None:
         return jsonify({
             "error": "FastText model not loaded. Ensure fasttext.model exists in "
-                     "models/saved_models/ (see Module 5's 04_WordEmbeddings.ipynb)."
+                     "models/saved_models/"
         }), 503
 
     wv = bundle.fasttext_model.wv

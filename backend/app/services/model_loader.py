@@ -1,28 +1,3 @@
-"""
-model_loader.py
-------------------
-Loads every trained artifact ONCE at app startup and holds them in a
-singleton, rather than re-loading joblib files / re-initializing the
-Stanza pipeline on every request.
-
-IMPORTANT — reuses training/*.py directly, doesn't duplicate it:
-    Rather than copy-pasting preprocessing/classification/NER/etc.
-    logic into the backend (which would let the two copies drift apart
-    over time), this adds `training/` to `sys.path` and imports those
-    modules directly. Training-time and serving-time logic is
-    guaranteed identical because it's literally the same code.
-
-IMPORTANT — corpus_index.pkl, not the raw dataset:
-    Similarity search needs to show headlines/categories for the
-    matched articles, but loading the full 185MB raw CSV and re-running
-    Module 3's preprocessing pipeline (~9s) on every Flask startup
-    would be wasteful and would make the backend depend on a file that
-    isn't meant to ship with it. Instead, `training/build_corpus_index.py`
-    (run once, after training) saves just the two columns needed
-    (Headline, core_categories) aligned row-for-row with the saved
-    TF-IDF matrix, as a small standalone file the backend actually loads.
-"""
-
 import os
 import sys
 
@@ -44,12 +19,6 @@ from similarity import get_similar_for_new_text, format_results
 
 
 class ModelBundle:
-    """
-    Singleton holding every loaded artifact. Access via `ModelBundle.get()`
-    — the first call does the (slow) loading, every call after that
-    returns the same already-loaded instance.
-    """
-
     _instance = None
 
     def __init__(self):

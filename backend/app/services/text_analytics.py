@@ -1,8 +1,4 @@
-"""
-text_analytics.py
---------------------
-Basic text statistics.
-"""
+
 
 from app.services.summarization import split_sentences
 

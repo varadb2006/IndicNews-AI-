@@ -1,5 +1,3 @@
-"""routes/health.py -- simple liveness check, and confirms models loaded."""
-
 from flask import Blueprint, jsonify
 
 from app.services.model_loader import ModelBundle

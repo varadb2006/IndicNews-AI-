@@ -1,13 +1,3 @@
-"""
-config.py
-----------
-Centralized configuration for the Flask backend — model artifact paths,
-thresholds, and settings. Keeping this in one place means no file has a
-hardcoded relative path buried in it; everything resolves from
-BASE_DIR, so the app works the same whether it's run from
-`backend/`, from the project root, or from inside a container.
-"""
-
 import os
 
 
