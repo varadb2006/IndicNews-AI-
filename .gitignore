@@ -19,7 +19,7 @@ frontend/dist/
 models/saved_models/*.pkl
 models/saved_models/*.model
 models/saved_models/*.bin
- models/saved_models/fasttext.model.wv.vectors_ngrams.npy
+models/saved_models/fasttext.model.wv.vectors_ngrams.npy
 
 # Dataset (large files — not committed; get from the team or Kaggle)
 dataset/*.csv
@@ -31,3 +31,4 @@ dataset/*.csv
 models/saved_models/fasttext.model.wv.vectors_ngrams.npy
 
 report
+frontend/src/services/
